@@ -1,0 +1,35 @@
+[Default Applications]
+x-scheme-handler/http=userapp-brave-browser.desktop
+x-scheme-handler/https=userapp-brave-browser.desktop
+x-scheme-handler/ftp=userapp-brave-browser.desktop
+x-scheme-handler/chrome=userapp-brave-browser.desktop
+text/html=userapp-brave-browserer.desktop
+application/x-extension-htm=userapp-brave-browser.desktop
+application/x-extension-html=userapp-brave-browser.desktop
+application/x-extension-shtml=userapp-brave-browser.desktop
+application/xhtml+xml=userapp-brave-browser.desktop
+application/x-extension-xhtml=userapp-brave-browser.desktop
+application/x-extension-xht=userapp-brave-browser.desktop
+image/jpeg=viewnior.desktop;sxiv.desktop;
+image/png=viewnior.desktop;sxiv.desktop;
+text/plain=mousepad.desktop
+x-scheme-handler/mailto=userapp-Thunderbird.desktop
+message/rfc822=userapp-Thunderbird.desktop
+application/pdf=zathura.desktop
+application/x-bittorrent=qBittorrent.desktop
+x-scheme-handler/about=brave-browser.desktop
+x-scheme-handler/unknown=brave-browser.desktop
+x-scheme-handler/tel=brave-browser.desktop
+x-scheme-handler/tg=userapp-Telegram Desktop-TZS701.desktop
+
+[Added Associations]
+image/jpeg=viewnior.desktop;sxiv.desktop;
+image/png=viewnior.desktop;sxiv.desktop;
+text/plain=mousepad.desktop;
+x-scheme-handler/mailto=userapp-Thunderbird.desktop;
+message/rfc822=userapp-Thunderbird.desktop;
+application/pdf=pdfstudio.desktop;zathura.desktop;
+application/x-bittorrent=qBittorrent.desktop;
+application/x-python-bytecode=code-oss.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-TZS701.desktop;
+application/gzip=pcmanfm.desktop;
