@@ -1,0 +1,11 @@
+configuration {
+width: 45;
+location: 2;
+font: "DroidSansMonoForPowerlinePlusNerdFileTypesMono 20";
+}
+//@theme "nord"
+//@theme "/home/martin/.local/share/rofi/themes/slate.rasi"
+//@theme "/home/martin/.local/share/rofi/themes/glue_pro_blue.rasi"
+//@theme "/home/martin/.local/share/rofi/themes/rounded-nord-dark.rasi"
+//@theme "/home/martin/.local/share/rofi/themes/rounded-nord-dark.rasi"
+@theme "/home/martin/.local/share/rofi/themes/rounded-nord-dark.rasi"
