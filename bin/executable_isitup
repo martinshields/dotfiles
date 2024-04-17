@@ -1,0 +1,21 @@
+#!/bin/bash
+#checking for internet
+
+#Is the internet up 
+echo "what do you want to check?"
+read -r target
+
+while true
+do
+  if ping -q -c 2 -w 2 "$target" > /dev/null; then
+    echo "Hey it's up!! $target is up!! $(date)"
+    notify-send "It's up" "$target is up and running $(date)"
+    break
+  else
+    echo "$target is currently down. $(date)"
+  fi
+sleep 2
+done
+
+  
+  

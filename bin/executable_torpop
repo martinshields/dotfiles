@@ -1,0 +1,28 @@
+#!/bin/sh
+
+  deluge-console info | grep % | 
+  sed " # The letters are for sorting and will not appear.
+  s/.^[P].*/A /;
+  s/.^[S].*/Z 🌱/;
+  s/.^[Q].*/N ✅/;
+  # s/.*Idle.*/B 🕰️/;
+  s/.^[D].*/L /;
+  # s/.*[D].*/M /" |
+  # uniq -c |	awk '{print $3 $1}' | paste -sd ' ' -  
+     # sort -h | uniq -c | awk '{print $3 $1}' | paste -sd ' ' -  
+
+case $BLOCK_BUTTON in
+  1) setsid -f "$TERMINAL" -e ;;
+  2) td-toggle ;;
+	3) notify-send "🌱 Torrent modulecs";; - Left click to open tremc.
+- Middle click to toggle transmission.
+- Shift click to edit script.
+Module shows number of "torrents"  :
+: paused
+🕰: idle (seeds needed)
+: uploading (unfinished)
+: downloading
+✅: done
+🌱: done and seeding" ;;
+	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac

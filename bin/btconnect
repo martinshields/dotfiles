@@ -1,0 +1,7 @@
+#!/bin/bash
+bluetoothctl power on  
+sleep 4 
+bt-device -l
+bt-device -c FC:58:FA:F1:E7:A5
+sleep 2
+exit

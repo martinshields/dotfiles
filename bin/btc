@@ -1,0 +1,11 @@
+#!/bin/bash
+sudo bluetoothctl power on  
+sleep 4 
+bt-device -l
+# bt-device -c FC:58:FA:F1:E7:A5
+bluetoothctl connect F4:4E:FC:B0:52:3F
+
+sleep 2
+pactl set-default-sink bluez_output.F4_4E_FC_B0_52_3F.a2dp-sink
+sleep 2
+exit

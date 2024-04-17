@@ -1,0 +1,6 @@
+#!/bin/bash
+alacritty &
+xdotool sleep 0.3 type "sxiv ~/Pictures/Wallpapers/Random_Wallpapers" &&
+xdotool key Return
+xdotool sleep 0.3 key "Super+f"
+xdotool sleep 0.3 key return 
