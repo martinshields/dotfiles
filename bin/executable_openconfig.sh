@@ -86,4 +86,5 @@ openconfig)
 	exit 1
 	;;
 esac
-alacritty -e nvim "$choice"
+chezmoi edit "$choice"
+# alacritty -e nvim "$choice"
