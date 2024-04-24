@@ -39,7 +39,7 @@ dunst)
 	choice="$HOME/.config/dunst/dunstrc"
 	;;
 i3)
-	choice="$HOME/.i3/config"
+	choice="$HOME/.config/i3/config"
 	;;
 neovim)
 	choice="$HOME/.config/nvim/init.lua"
