@@ -1,4 +1,5 @@
 #alias up='sudo pacman -Syu'
+#test for me 
 alias up='paru'
 #alias up="cd ~/Dropbox/myscripts && ./update1.sh"
 ##alias up="./update1.sh"
