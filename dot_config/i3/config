@@ -69,7 +69,6 @@ bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart du
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
-bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 # bindsym $mod+c exec xautolock -toggle; exec notify-send 'Toggle Lock'
 # bindsym --release $mod+Shift+w  exec xdotool sleep 0.5 type "op6666@gmail.com" 
@@ -78,7 +77,8 @@ bindsym $mod+w  exec ~/bin/wifia
 
 bindsym $mod+n exec rofi -show drun -show-icons -m primary
 bindsym $mod+Shift+i exec code ~/.i3/config
-bindsym $mod+i exec ~/bin/openconfig.sh
+# bindsym $mod+i exec ~/bin/openconfig.sh
+bindsym $mod+i exec alacritty -e ~/bin/openconfig.sh
 bindsym $mod+o exec ~/bin/rofi-wifi-menu-master/rofi-wifi-menu.sh
 
 bindsym $mod+p exec ~/bin/wallch
