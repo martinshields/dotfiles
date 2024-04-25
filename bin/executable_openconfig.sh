@@ -1,4 +1,5 @@
 #!/bin/bash
+#This script opens only files in the chezmoi cd
 
 declare options=("i3
 bash
@@ -81,6 +82,10 @@ snippets)
 
 openconfig)
 	choice="$HOME/bin/openconfig.sh"
+	;;
+
+openconfigbase)
+	choice="$HOME/bin/openconfigbase.sh"
 	;;
 *)
 	exit 1
