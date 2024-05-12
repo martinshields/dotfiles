@@ -8,6 +8,7 @@ alias up='paru'
 alias iinstall='paru -S'
 alias iremove='sudo paru -R'
 alias mc='sudo mc'
+alias fdv='nvim $(fzf --preview='cat {}')'
 # alias status='./status.sh'
 #alias backup="cd ~/Dropbox/myscripts && ./myBUfile.sh"
 alias vim="nvim"
@@ -19,7 +20,7 @@ alias vw='vim ~/vimwiki/index.wiki'
 alias myip='curl ifconfig.me | cowsay'
 alias vers='cat /etc/os-release'
 # alias blender="devour.sh blender"
-alias fdv='fd --type f --hidden --exclude .git | fzf | xargs lvim'
+# alias fdv='fd --type f --hidden --exclude .git | fzf | xargs lvim'
 alias mv="mv-iv"
 alias cd="z"
 alias cp="cp -riv"
