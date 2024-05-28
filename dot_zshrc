@@ -142,11 +142,4 @@ export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
 source /home/martin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 eval "$(starship init zsh)"
 
-
-source /home/martin/.config/broot/launcher/bash/br
-
-
-
-
-
 eval "$(atuin init zsh)"
