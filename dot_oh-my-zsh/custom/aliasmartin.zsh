@@ -7,7 +7,7 @@ alias ca='chezmoi apply'
 alias iinstall='paru -S'
 alias iremove='sudo paru -R'
 alias mc='sudo mc'
-alias vim="nvim"
+alias vim="NVIM_APPNAME=mvim nvim"
 alias mvim="NVIM_APPNAME=mvim nvim"
 alias ls="lsd -a"
 alias tree="exa -T"
