@@ -7,8 +7,11 @@ alias ca='chezmoi apply'
 alias iinstall='paru -S'
 alias iremove='sudo paru -R'
 alias mc='sudo mc'
-alias vim="NVIM_APPNAME=mvim nvim"
+alias vim="nvim"
 alias mvim="NVIM_APPNAME=mvim nvim"
+alias fv='"NVIM_APPNAME=mvim nvim"| $(fzf -m --preview="bat --color=always {}")'
+# alias fv='NVIM_APPNAME=mvim nvim| $(fzf -m --preview="bat --color=always
+# {}")'
 alias ls="lsd -a"
 alias tree="exa -T"
 alias v='vifm .'
@@ -16,7 +19,7 @@ alias vw='vim ~/vimwiki/index.wiki'
 alias myip='curl ifconfig.me | cowsay'
 alias vers='cat /etc/os-release'
 alias mv="mv-iv"
-alias cd="z"
+# alias cd="z"
 alias cp="cp -riv"
 alias mkdir="mkdir -vp"
 # alias cat="bat"
