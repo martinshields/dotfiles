@@ -7,8 +7,9 @@ alias ca='chezmoi apply'
 alias iinstall='paru -S'
 alias iremove='sudo paru -R'
 alias mc='sudo mc'
-alias vim="nvim"
+# alias vim="nvim"
 alias mvim="NVIM_APPNAME=mvim nvim"
+alias vim="NVIM_APPNAME=mvim nvim"
 alias fv='"NVIM_APPNAME=mvim nvim"| $(fzf -m --preview="bat --color=always {}")'
 # alias fv='NVIM_APPNAME=mvim nvim| $(fzf -m --preview="bat --color=always
 # {}")'
