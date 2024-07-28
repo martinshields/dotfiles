@@ -1,4 +1,5 @@
 #!/bin/bash
  nmcli dev wifi list --rescan yes
  # sleep 1
- alacritty -e nmtui
+ # alacritty -e nmtui
+ alacritty -e impala 
