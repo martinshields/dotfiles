@@ -6,6 +6,7 @@ alias ch='chezmoi cd'
 alias ca='chezmoi apply'
 alias iinstall='paru -S'
 alias iremove='sudo paru -R'
+alias gdl='github-dlr'
 alias mc='sudo mc'
 # alias vim="nvim"
 alias mvim="NVIM_APPNAME=mvim nvim"
@@ -13,6 +14,7 @@ alias vim="NVIM_APPNAME=mvim nvim"
 alias fv='"NVIM_APPNAME=mvim nvim"| $(fzf -m --preview="bat --color=always {}")'
 # alias fv='NVIM_APPNAME=mvim nvim| $(fzf -m --preview="bat --color=always
 # {}")'
+alias sf='fzf -m --preview="bat --color=always {}" --bind "ctrl-w:become(mvim {+}),ctrl-y:execute-silent(echo {} | clip)+abort"'
 alias ls="lsd -a"
 alias tree="exa -T"
 alias v='vifm .'
