@@ -143,3 +143,5 @@ source /home/martin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 eval "$(starship init zsh)"
 
 eval "$(atuin init zsh)"
+. /home/$USER/.nix-profile/etc/profile.d/nix.sh
+
