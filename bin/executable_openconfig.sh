@@ -24,72 +24,73 @@ choice=$(echo -e "${options[@]}" | dmenu -i -p 'Edit config file: ')
 
 case "$choice" in
 quit)
-	echo "Program terminated." && exit 1
-	;;
+  echo "Program terminated." && exit 1
+  ;;
 
 alacritty)
-	choice="$HOME/.config/alacritty/alacritty.yml"
-	;;
+  choice="$HOME/.config/alacritty/alacritty.yml"
+  ;;
 bash)
-	choice="$HOME/.bashrc"
-	;;
+  choice="$HOME/.bashrc"
+  ;;
 picom)
-	choice="$HOME/.config/picom.conf"
-	;;
+  choice="$HOME/.config/picom.conf"
+  ;;
 dunst)
-	choice="$HOME/.config/dunst/dunstrc"
-	;;
+  choice="$HOME/.config/dunst/dunstrc"
+  ;;
 i3)
-	choice="$HOME/.config/i3/config"
-	;;
+  choice="$HOME/.config/i3/config"
+  ;;
 neovim)
-	choice="$HOME/.config/nvim/init.lua"
-	;;
+  choice="$HOME/.config/nvim/init.lua"
+  ;;
 lvim)
-	choice="$HOME/.config/lvim/config.lua"
-	;;
+  choice="$HOME/.config/lvim/config.lua"
+  ;;
 polybar)
-	choice="$HOME/.config/polybar/config.ini"
-	;;
+  choice="$HOME/.config/polybar/config.ini"
+  ;;
 defaultapps)
-	choice="$HOME/.config/mimeapps.list"
-	;;
+  choice="$HOME/.config/mimeapps.list"
+  ;;
 vifm)
-	choice="$HOME/.config/vifm/vifmrc"
-	;;
+  choice="$HOME/.config/vifm/vifmrc"
+  ;;
 
 antigen)
-	choice="$HOME/.antigenrc"
-	;;
+  choice="$HOME/.antigenrc"
+  ;;
 
 aliasmartin)
-	choice="$HOME/.oh-my-zsh/custom/aliasmartin.zsh"
-	;;
+  choice="$HOME/.oh-my-zsh/custom/aliasmartin.zsh"
+  ;;
 
 functions)
-	choice="$HOME/.oh-my-zsh/custom/functions.zsh"
-	;;
+  choice="$HOME/.oh-my-zsh/custom/functions.zsh"
+  ;;
 
 xresources)
-	choice="$HOME/.Xresources"
-	;;
+  choice="$HOME/.Xresources"
+  ;;
 zsh)
-	choice="$HOME/.zshrc"
-	;;
+  choice="$HOME/.zshrc"
+  ;;
 snippets)
-	choice="$HOME/snippets"
-	;;
+  choice="$HOME/snippets"
+  ;;
 
 openconfig)
-	choice="$HOME/bin/openconfig.sh"
-	;;
+  choice="$HOME/bin/openconfig.sh"
+  ;;
 
 openconfigbase)
-	choice="$HOME/bin/openconfigbase.sh"
-	;;
+  choice="$HOME/bin/openconfigbase.sh"
+  ;;
 *)
-	exit 1
-	;;
+  exit 1
+  ;;
 esac
 chezmoi edit "$choice"
 # alacritty -e nvim "$choice"
+# chezmoi edit && NVIM_APPNAME=mvim nvim "$choice"
