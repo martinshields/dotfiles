@@ -74,7 +74,7 @@ ZSH_THEME="pygmalion"
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git)
 
-plugins=(git command-not-found vi-mode extract sudo vscode wd common-aliases z zsh-autosuggestions)
+plugins=(git command-not-found vi-mode extract sudo vscode wd common-aliases z zsh-autosuggestions zsh-completions)
 
 source $ZSH/oh-my-zsh.sh
 
