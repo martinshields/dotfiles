@@ -74,13 +74,14 @@ ZSH_THEME="pygmalion"
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git)
 
-plugins=(git command-not-found vi-mode extract sudo vscode wd common-aliases z zsh-autosuggestions zsh-completions)
+# plugins=(git command-not-found vi-mode extract sudo vscode wd common-aliases z zsh-autosuggestions zsh-completions)
+plugins=(git sudo vscode wd common-aliases z zsh-autosuggestions zsh-completions)
 
 source $ZSH/oh-my-zsh.sh
-
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
-
+# McFly init (must come after sourcing Oh My Zsh)
+eval "$(mcfly init zsh)"
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
