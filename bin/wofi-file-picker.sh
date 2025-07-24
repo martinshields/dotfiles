@@ -1,13 +1,17 @@
 #!/bin/bash
 
-# Set the search directory
 search_dir="$HOME/adata/"
 
-# List full paths, extract basenames, and map them back to full paths
-# Then pass only basenames to wofi, and use selection to find full path
-mapfile -t files < <(find "$search_dir" -type f)
+# Find only .mkv, .mp4, and .avi files (case-insensitive)
+mapfile -t files < <(find "$search_dir" -type f \( -iname "*.mkv" -o -iname "*.mp4" -o -iname "*.avi" \))
 
-# Build a list of names (basenames) and associate them with full paths
+# Exit early if no files are found
+if [ ${#files[@]} -eq 0 ]; then
+    notify-send "No video files found in $search_dir"
+    exit 1
+fi
+
+# Build basename-to-full-path map
 declare -A file_map
 file_list=""
 for file in "${files[@]}"; do
@@ -16,10 +20,9 @@ for file in "${files[@]}"; do
     file_list+="$name"$'\n'
 done
 
-# Show names only in wofi
-selected=$(echo "$file_list" | wofi --dmenu --prompt "Choose file:")
+# Show wofi menu with wider window
+selected=$(echo "$file_list" | wofi --dmenu --prompt "Choose video:" --width 1200)
 
-# Get full path from map and do something with it
 if [[ -n "$selected" ]]; then
     full_path="${file_map[$selected]}"
     xdg-open "$full_path"
