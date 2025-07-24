@@ -16,6 +16,7 @@ alias cb="clipboard"
 alias fan3="echo level 3 | sudo tee /proc/acpi/ibm/fan"
 alias fan7="echo level 7 | sudo tee /proc/acpi/ibm/fan"
 alias fanfull="echo level full-speed | sudo tee /proc/acpi/ibm/fan"
+alias yl="yadm enter lazygit"
 
 alias fanstat="cat /proc/acpi/ibm/fan"
 
