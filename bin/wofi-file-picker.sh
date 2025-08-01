@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 search_dir="$HOME/adata/"
@@ -20,11 +21,10 @@ for file in "${files[@]}"; do
     file_list+="$name"$'\n'
 done
 
-# Show wofi menu with wider window
-selected=$(echo "$file_list" | wofi --dmenu --prompt "Choose video:" --width 1200)
+# Show wofi menu with wider window and larger text
+selected=$(echo "$file_list" | wofi --dmenu --prompt "Choose video:" --width 1200 --font "monospace 24")
 
 if [[ -n "$selected" ]]; then
     full_path="${file_map[$selected]}"
     xdg-open "$full_path"
 fi
-
