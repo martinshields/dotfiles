@@ -22,7 +22,7 @@ for file in "${files[@]}"; do
 done
 
 # Show wofi menu with wider window and larger text
-selected=$(echo "$file_list" | wofi --dmenu --prompt "Choose video:" --width 1200 --font "monospace 24")
+selected=$(echo "$file_list" | wofi --dmenu --prompt "Choose video:" --width 1200 --font "monospace 24" --insensitive)
 
 if [[ -n "$selected" ]]; then
     full_path="${file_map[$selected]}"
