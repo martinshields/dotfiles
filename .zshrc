@@ -84,6 +84,8 @@ source <(fzf --zsh)
 eval "$(mcfly init zsh)"
 # User configuration
 
+autoload -Uz compinit
+compinit
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
