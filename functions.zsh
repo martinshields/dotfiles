@@ -37,21 +37,21 @@
   }
 
 
-yi() {
-	SELECTED_PKGS="$(paru -Slq | fzf --header='Install packages' -m --height 100% --preview 'yay -Si {1}')"
-	if [ -n "$SELECTED_PKGS" ]; then
-		yay -S $(echo $SELECTED_PKGS)
-	fi
-}
-
-# Search and remove packages with yay and fzf
-yr() {
-	SELECTED_PKGS="$(paru -Qsq | fzf --header='Remove packages' -m --height 100% --preview 'yay -Si {1}')"
-	if [ -n "$SELECTED_PKGS" ]; then
-		yay -Rns $(echo $SELECTED_PKGS)
-	fi
-}
-
+# yi() {
+# 	SELECTED_PKGS="$(paru -Slq | fzf --header='Install packages' -m --height 100% --preview 'yay -Si {1}')"
+# 	if [ -n "$SELECTED_PKGS" ]; then
+# 		yay -S $(echo $SELECTED_PKGS)
+# 	fi
+# }
+#
+# # Search and remove packages with yay and fzf
+# yr() {
+# 	SELECTED_PKGS="$(paru -Qsq | fzf --header='Remove packages' -m --height 100% --preview 'yay -Si {1}')"
+# 	if [ -n "$SELECTED_PKGS" ]; then
+# 		yay -Rns $(echo $SELECTED_PKGS)
+# 	fi
+# }
+#
 # cd() {
 #     # requires fd and fzf
 #     if [[ $# -eq 0 ]]; then
