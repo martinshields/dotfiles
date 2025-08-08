@@ -18,6 +18,8 @@ alias fan7="echo level 7 | sudo tee /proc/acpi/ibm/fan"
 alias fanfull="echo level full-speed | sudo tee /proc/acpi/ibm/fan"
 alias yl="yadm enter lazygit"
 
+alias hld="vifm ~/.local/share/omarchy/default/hypr/"
+alias hlc="vifm ~/.config/hypr/"
 alias fanstat="cat /proc/acpi/ibm/fan"
 
 
