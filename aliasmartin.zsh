@@ -19,6 +19,7 @@ alias fanfull="echo level full-speed | sudo tee /proc/acpi/ibm/fan"
 alias yl="yadm enter lazygit"
 alias yi="~/bin/pkg-install"
 alias yr="~/bin/pkg-remove"
+alias al="nvim ~/.oh-my-zsh/custom/aliasmartin.zsh"
 
 alias hld="vifm ~/.config/hypr/ ~/.local/share/omarchy/default/hypr/"
 alias hlc="vifm ~/.config/hypr/"
