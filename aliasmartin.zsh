@@ -21,8 +21,8 @@ alias yi="~/bin/pkg-install"
 alias yr="~/bin/pkg-remove"
 alias al="nvim ~/.oh-my-zsh/custom/aliasmartin.zsh"
 
-alias hld="vifm ~/.config/hypr/ ~/.local/share/omarchy/default/hypr/"
-alias hlc="vifm ~/.config/hypr/"
+alias hpd="vifm ~/.config/hypr/ ~/.local/share/omarchy/default/hypr/"
+alias hpc="vifm ~/.config/hypr/"
 alias fanstat="cat /proc/acpi/ibm/fan"
 
 
