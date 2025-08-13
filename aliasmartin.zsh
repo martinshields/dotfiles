@@ -1,6 +1,6 @@
 #alias up='sudo pacman -Syu'
 #test for me 
-alias up='paru'
+alias up='paru --noconfirm --ignore uwsm'
 alias h='cd ~'
 alias vim="nvim"
 alias ls="lsd -a"
@@ -38,13 +38,14 @@ fullupdate() {
     
     # 1️⃣ Update system & AUR packages
     echo "📦 Updating Pacman..."
-    sudo pacman -Syu
+    sudo pacman -Syu --ignore uwsm
     
     # echo "📦 Updating AUR packages with yay..."
     # yay -Syu
     
     echo "📦 Updating AUR packages with paru..."
-    paru -Syu
+    paru -Syu --ignore uwsm
+
     
     # echo "📦 Updating AUR packages with pikaur..."
     # pikaur -Syu
