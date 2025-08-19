@@ -3,6 +3,7 @@
 alias up='yay --noconfirm'
 alias h='cd ~'
 alias vim="nvim"
+alias vi="nvim"
 alias ls="lsd -a"
 alias v='vifm .'
 alias mv="mv-iv"
