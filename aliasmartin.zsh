@@ -1,6 +1,6 @@
 #alias up='sudo pacman -Syu'
 #test for me 
-alias up='paru --noconfirm --ignore uwsm'
+alias up='yay --noconfirm'
 alias h='cd ~'
 alias vim="nvim"
 alias ls="lsd -a"
