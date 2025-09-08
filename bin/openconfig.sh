@@ -7,6 +7,7 @@ file_list=(
   "$HOME/.oh-my-zsh/custom/functions.zsh"
   "$HOME/.zshrc"
   "$HOME/.bashrc"
+  "$HOME/.config/waybar/config.jsonc"
   "$HOME/bin/wofi-file-picker.sh"
   "$HOME/bin/openconfig.sh"
 )

@@ -26,6 +26,9 @@ alias hpd="vifm ~/.config/hypr/ ~/.local/share/omarchy/default/hypr/"
 alias hpc="vifm ~/.config/hypr/"
 alias fanstat="cat /proc/acpi/ibm/fan"
 
+#batstuff
+
+alias lsblk="lsblk | bat -l conf"
 
 # Navigation
 alias ..="cd .."

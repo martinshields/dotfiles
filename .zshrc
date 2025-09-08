@@ -12,6 +12,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="pygmalion"
 
+setopt CORRECT
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
