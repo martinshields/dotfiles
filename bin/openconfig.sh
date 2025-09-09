@@ -8,6 +8,7 @@ file_list=(
   "$HOME/.zshrc"
   "$HOME/.bashrc"
   "$HOME/.config/waybar/config.jsonc"
+  "$HOME/.config/kitty/kitty.conf"
   "$HOME/bin/wofi-file-picker.sh"
   "$HOME/bin/openconfig.sh"
 )
