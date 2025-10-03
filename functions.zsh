@@ -1,4 +1,4 @@
-# function extract()      # Handy Extract Program
+# function unzip()      # Handy ExVtract Program
 # {
 #     if [ -f $1 ] ; then
 #
@@ -19,7 +19,7 @@
 #         echo "'$1' is not a valid file!"
 #     fi
 # }
-
+#
  command_not_found_handler() {
       # Find which package contains the file with the path /usr/bin/COMMAND
       package_name=$(pacman -Fq "/usr/bin/$1" | head)
