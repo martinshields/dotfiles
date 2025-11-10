@@ -67,24 +67,40 @@
 #        --query "$1" )" || exit
 #     fi
 # }
-
 function yp() {
-  
   cd ~
+
+  # Use \cp to bypass aliases (like cp -i)
   \cp --update ~/.oh-my-zsh/custom/functions.zsh ~/functions.zsh
   \cp --update ~/.oh-my-zsh/custom/aliasmartin.zsh ~/aliasmartin.zsh
-  \cp --update ~/.config/nvim/ ~/nvimbu
+
+  # Fix: Use \cp and -a (better than -R for configs)
+  \cp -a ~/.config/nvim/ ~/nvimbu/
+
   echo "Copying over functions.zsh and aliasmartin.zsh to ~ ."
-  sleep 3
-  echo "Running pkglist and pkglistAUR."
-  pacman -Qqe > pkglist.txt &&
-  pacman -Qqem > pkglistAUR.txt
+  sleep 1
+
+  echo "Running pkglist and pkglistAUR..."
+  pacman -Qqe > ~/pkglist.txt && 
+  pacman -Qqem > ~/pkglistAUR.txt && 
   echo "pkglist and pkglistAUR are backed up."
-  sleep 2
+
+  sleep 1
+
+  echo "Running yadm status..."
   yadm status
-  yadm commit -a
+
+  echo "Committing and pushing with yadm..."
+  yadm add -u
+  yadm commit -m "Auto backup: $(date '+%Y-%m-%d %H:%M')"
   yadm push
+
+  echo "All done! Your dotfiles are synced."
 }
+
+
+
+
 
 # yadm
 function yl() {
