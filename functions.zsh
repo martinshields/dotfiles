@@ -67,39 +67,111 @@
 #        --query "$1" )" || exit
 #     fi
 # }
+# function yp() {
+#   cd ~
+#
+#   # Use \cp to bypass aliases (like cp -i)
+#   \cp --update ~/.oh-my-zsh/custom/functions.zsh ~/functions.zsh
+#   \cp --update ~/.oh-my-zsh/custom/aliasmartin.zsh ~/aliasmartin.zsh
+#
+#   # Fix: Use \cp and -a (better than -R for configs)
+#   \cp -a ~/.config/nvim/ ~/nvimbu/
+#
+#   echo "Copying over functions.zsh and aliasmartin.zsh to ~ ."
+#   sleep 1
+#
+#   echo "Running pkglist and pkglistAUR..."
+#   pacman -Qqe > ~/pkglist.txt && 
+#   pacman -Qqem > ~/pkglistAUR.txt && 
+#   echo "pkglist and pkglistAUR are backed up."
+#
+#   sleep 1
+#
+#   echo "Running yadm status..."
+#   yadm status
+#
+#   echo "Committing and pushing with yadm..."
+#   yadm add -u
+#   yadm commit -m "Auto backup: $(date '+%Y-%m-%d %H:%M')"
+#   yadm push
+#
+#   echo "All done! Your dotfiles are synced."
+# }
+
+
 function yp() {
-  cd ~
+  # Ensure we're in the home directory
+  cd ~ || { echo "Failed to cd to home directory"; return 1; }
 
-  # Use \cp to bypass aliases (like cp -i)
-  \cp --update ~/.oh-my-zsh/custom/functions.zsh ~/functions.zsh
-  \cp --update ~/.oh-my-zsh/custom/aliasmartin.zsh ~/aliasmartin.zsh
+  local backup_dir="$HOME/nvimbu"
+  local functions_src="$HOME/.oh-my-zsh/custom/functions.zsh"
+  local alias_src="$HOME/.oh-my-zsh/custom/aliasmartin.zsh"
+  local functions_dest="$HOME/functions.zsh"
+  local alias_dest="$HOME/aliasmartin.zsh"
 
-  # Fix: Use \cp and -a (better than -R for configs)
-  \cp -a ~/.config/nvim/ ~/nvimbu/
+  echo "Starting dotfiles backup and sync..."
 
-  echo "Copying over functions.zsh and aliasmartin.zsh to ~ ."
-  sleep 1
+  # === Copy custom zsh files ===
+  if [[ -f "$functions_src" ]]; then
+    \cp --update "$functions_src" "$functions_dest" && echo "Updated $functions_dest"
+  else
+    echo "Warning: $functions_src not found, skipping."
+  fi
 
-  echo "Running pkglist and pkglistAUR..."
-  pacman -Qqe > ~/pkglist.txt && 
-  pacman -Qqem > ~/pkglistAUR.txt && 
-  echo "pkglist and pkglistAUR are backed up."
+  if [[ -f "$alias_src" ]]; then
+    \cp --update "$alias_src" "$alias_dest" && echo "Updated $alias_dest"
+  else
+    echo "Warning: $alias_src not found, skipping."
+  fi
 
-  sleep 1
+  # === Backup nvim config to nvimbu (git repo) ===
+  if [[ -d "$HOME/.config/nvim" ]]; then
+    mkdir -p "$backup_dir"
+    \cp -a "$HOME/.config/nvim/" "$backup_dir/" && echo "Backed up nvim config to $backup_dir"
+  else
+    echo "Warning: nvim config directory not found at ~/.config/nvim"
+  fi
 
-  echo "Running yadm status..."
-  yadm status
+  # === Git push nvimbu repo ===
+  if [[ -d "$backup_dir/.git" ]]; then
+    echo "Pushing nvimbu git repo..."
+    (
+      cd "$backup_dir" || return 1
+      git add -A
+      git commit -m "Auto backup: $(date '+%Y-%m-%d %H:%M')" || echo "Nothing to commit in nvimbu."
+      git push && echo "nvimbu repo pushed successfully."
+    ) || echo "Failed to push nvimbu repo."
+  else
+    echo "nvimbu is not a git repository. Skipping git push."
+  fi
 
-  echo "Committing and pushing with yadm..."
-  yadm add -u
-  yadm commit -m "Auto backup: $(date '+%Y-%m-%d %H:%M')"
-  yadm push
+  # === Generate package lists ===
+  if command -v pacman >/dev/null 2>&1; then
+    echo "Generating package lists..."
+    pacman -Qqe > ~/pkglist.txt 2>/dev/null && echo "Official repo packages → pkglist.txt"
+    pacman -Qqem > ~/pkglistAUR.txt 2>/dev/null && echo "AUR packages → pkglistAUR.txt"
+  else
+    echo "pacman not found. Skipping package list generation."
+  fi
 
-  echo "All done! Your dotfiles are synced."
+  # === YADM operations ===
+  if command -v yadm >/dev/null 2>&1; then
+    echo "Running yadm status..."
+    yadm status
+
+    echo "Committing and pushing dotfiles via yadm..."
+    local commit_msg="Auto backup: $(date '+%Y-%m-%d %H:%M')"
+    
+    yadm add -u && \
+    yadm commit -m "$commit_msg" && \
+    yadm push && \
+    echo "yadm: Successfully committed and pushed."
+  else
+    echo "yadm not found. Skipping version control sync."
+  fi
+
+  echo "All done! Dotfiles, packages, and nvimbu are synced and backed up."
 }
-
-
-
 
 
 # yadm
