@@ -73,6 +73,7 @@ function yp() {
   cd ~
   \cp --update ~/.oh-my-zsh/custom/functions.zsh ~/functions.zsh
   \cp --update ~/.oh-my-zsh/custom/aliasmartin.zsh ~/aliasmartin.zsh
+  \cp --update ~/.config/nvim/ ~/nvimbu
   echo "Copying over functions.zsh and aliasmartin.zsh to ~ ."
   sleep 3
   echo "Running pkglist and pkglistAUR."
