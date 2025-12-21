@@ -16,6 +16,8 @@ alias cb="clipboard"
 alias fan3="echo level 3 | sudo tee /proc/acpi/ibm/fan"
 alias fan7="echo level 7 | sudo tee /proc/acpi/ibm/fan"
 alias fanfull="echo level full-speed | sudo tee /proc/acpi/ibm/fan"
+alias fanstat="cat /proc/acpi/ibm/fan"
+
 alias yl="yadm enter lazygit"
 alias yi="~/bin/pkg-install"
 alias yr="~/bin/pkg-remove"
@@ -23,7 +25,6 @@ alias yr="~/bin/pkg-remove"
 alias al="nvim ~/.oh-my-zsh/custom/aliasmartin.zsh"
 alias hpd="vifm ~/.config/hypr/ ~/.local/share/omarchy/default/hypr/"
 alias hpc="vifm ~/.config/hypr/"
-alias fanstat="cat /proc/acpi/ibm/fan"
 alias discord="~/.local/share/Discord/Discord"
 
 #batstuff
