@@ -89,7 +89,8 @@ fullupdate() {
 # Network analysis
 alias myip="curl ifconfig.me"
 alias ports="sudo netstat -tulpen"
-alias speedtest="speedtest-cli"
+alias speedtest="cloudflare-speed-cli"
+# alias speedtest="speedtest-cli"
 alias pingg="ping -c 5 google.com"
 
 
