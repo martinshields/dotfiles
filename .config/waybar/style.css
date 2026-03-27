@@ -11,7 +11,7 @@
 
   /* --- Waybar ---*/
   window#waybar {
-  background-color: transparent;
+  background-color: #000000;
   transition-property: background-color;
   transition-duration: .5s;
 }
@@ -275,3 +275,9 @@ tooltip label {
 }
 
 
+
+#custom-cava {
+  font-size: 14px;
+  margin: 0 8px;
+  color: @love;
+}

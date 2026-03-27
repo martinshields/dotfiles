@@ -38,7 +38,7 @@
     "group/left4",
     "group/left5"
     ],
-  "modules-left": ["group/left1", "group/left2", "group/left3", "group/left4", "group/left5"],
+  "modules-left": ["group/left1", "group/left2", "custom/cava", "group/left3", "group/left4", "group/left5"],
   "modules-center": ["hyprland/window"],
   "modules-right": ["group/right1", "group/right2"],
 
@@ -60,15 +60,7 @@
   ]
   },
   "hyprland/workspaces": {
-    "format": "{icon}",
-    "format-icons": {
-      "1": "1",
-      "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6"
-    },
+    "format": "{name}",
     "persistent-workspaces": {
       "*": [1, 2, 3, 4, 5, 6]
     }
@@ -158,7 +150,7 @@
   },
   "clock": {
     "format": " {:%H:%M %a} ",
-    "format-alt": " {:%m/%d/%Y  %H:%M:%S}",
+    "format-alt": " {:%d/%m/%Y  %H:%M:%S}",
     "tooltip-format": "<span>{calendar}</span>",
     "calendar": {
       "mode": "month",
@@ -263,7 +255,7 @@
         "format": "{}°",
         "tooltip": true,
         "interval": 1800,
-        "exec": "wttrbar --location 32907 --fahrenheit",
+        "exec": "wttrbar --location yourlocation",
         "return-type": "json"
   },
   "pulseaudio#input": {
@@ -308,6 +300,11 @@
       "paused": "󰋐"  
     },
     "ignored-players": ["firefox", "chromium", "brave"]
+  },
+  "custom/cava": {
+    "exec": "~/.config/waybar/cava.sh",
+    "format": "{}",
+    "tooltip": false
   },
   "custom/screenrecording-indicator": {
     "on-click": "omarchy-cmd-screenrecord",
