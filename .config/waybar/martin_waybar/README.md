@@ -14,8 +14,8 @@ Backup of working waybar configuration for easy reload.
 To restore this config as the active waybar config:
 
 ```bash
-\cp ~/.config/martin_waybar/config.jsonc ~/.config/waybar/config.jsonc
-\cp ~/.config/martin_waybar/style.css ~/.config/waybar/style.css
+\cp ~/.config/waybar/martin_waybar/config.jsonc ~/.config/waybar/config.jsonc
+\cp ~/.config/waybar/martin_waybar/style.css ~/.config/waybar/style.css
 omarchy-restart-waybar
 ```
 
@@ -26,8 +26,8 @@ omarchy-restart-waybar
 To update this backup with your current waybar config:
 
 ```bash
-\cp ~/.config/waybar/config.jsonc ~/.config/martin_waybar/config.jsonc
-\cp ~/.config/waybar/style.css ~/.config/martin_waybar/style.css
-yadm add ~/.config/martin_waybar/config.jsonc ~/.config/martin_waybar/style.css
+\cp ~/.config/waybar/config.jsonc ~/.config/waybar/martin_waybar/config.jsonc
+\cp ~/.config/waybar/style.css ~/.config/waybar/martin_waybar/style.css
+yadm add ~/.config/waybar/martin_waybar/config.jsonc ~/.config/waybar/martin_waybar/style.css
 yadm commit -m "Update martin_waybar backup"
 ```
