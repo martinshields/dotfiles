@@ -255,7 +255,7 @@
         "format": "{}°",
         "tooltip": true,
         "interval": 1800,
-        "exec": "wttrbar --location yourlocation",
+        "exec": "wttrbar --location=32907",
         "return-type": "json"
   },
   "pulseaudio#input": {
