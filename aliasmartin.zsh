@@ -2,6 +2,7 @@
 #test for me 
 alias up='yay --noconfirm'
 alias h='cd ~'
+alias tl='npx torlnk'
 alias vim="nvim"
 alias vi="nvim"
 alias ls="lsd -a"
