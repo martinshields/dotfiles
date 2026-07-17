@@ -80,7 +80,9 @@ function yp() {
     echo "Committing and pushing dotfiles via yadm..."
     local commit_msg="Auto backup: $(date '+%Y-%m-%d %H:%M')"
     
-    yadm add -u && \
+    yadm add -u
+    local yadm_files
+    yadm_files=$(yadm diff --cached --name-only)
     yadm commit -m "$commit_msg" && \
     yadm push && \
     echo "yadm: Successfully committed and pushed."
@@ -89,6 +91,11 @@ function yp() {
   fi
 
   echo "All done! Dotfiles, packages, and nvimbu are synced and backed up."
+
+  if [[ -n "$yadm_files" ]]; then
+    echo "\nFiles pushed via yadm:"
+    echo "$yadm_files" | while IFS= read -r f; do echo "\e[32m  $f\e[0m"; done
+  fi
 }
 
 
