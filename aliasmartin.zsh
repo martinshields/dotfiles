@@ -26,7 +26,6 @@ alias yr="~/bin/pkg-remove"
 alias al="nvim ~/.oh-my-zsh/custom/aliasmartin.zsh"
 alias hpd="vifm ~/.config/hypr/ ~/.local/share/omarchy/default/hypr/"
 alias hpc="vifm ~/.config/hypr/"
-alias discord="~/.local/share/Discord/Discord"
 
 #batstuff
 
