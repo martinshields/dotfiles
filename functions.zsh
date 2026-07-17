@@ -94,7 +94,7 @@ function yp() {
 
   if [[ -n "$yadm_files" ]]; then
     echo "\nFiles pushed via yadm:"
-    echo "$yadm_files" | while IFS= read -r f; do echo "\e[32m  $f\e[0m"; done
+    echo "$yadm_files" | while IFS= read -r f; do print -P "%F{green}  $f%f"; done
   fi
 }
 
