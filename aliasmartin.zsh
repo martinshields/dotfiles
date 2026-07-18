@@ -9,8 +9,7 @@ alias ls="lsd -a"
 alias v='vifm .'
 alias mv="mv-iv"
 alias mkdir="mkdir -vp"
-alias wific="nmcli device wifi"
-alias wifia="nmtui"
+
 # Enhanced WHOIS lookups
 alias dspace='ncdu'
 alias cb="clipboard"
@@ -43,13 +42,13 @@ fullupdate() {
     
     # 1️⃣ Update system & AUR packages
     echo "📦 Updating Pacman..."
-    sudo pacman -Syu --ignore uwsm
+    sudo pacman -Syu 
     
     # echo "📦 Updating AUR packages with yay..."
     # yay -Syu
     
     echo "📦 Updating AUR packages with paru..."
-    paru -Syu --ignore uwsm
+    paru -Syu
 
     
     # echo "📦 Updating AUR packages with pikaur..."
@@ -90,7 +89,6 @@ fullupdate() {
 alias myip="curl ifconfig.me"
 alias ports="sudo netstat -tulpen"
 alias speedtest="cloudflare-speed-cli"
-# alias speedtest="speedtest-cli"
 alias pingg="ping -c 5 google.com"
 
 
