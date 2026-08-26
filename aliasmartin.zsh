@@ -1,6 +1,6 @@
 #alias up='sudo pacman -Syu'
 #test for me 
-alias up='yay --noconfirm'
+alias up='omarchy update'
 alias h='cd ~'
 alias tl='npx torlnk'
 alias vim="nvim"
