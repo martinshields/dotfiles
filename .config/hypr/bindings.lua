@@ -60,10 +60,23 @@ o.bind("SUPER + SHIFT + A", "Grok", { launch = "brave --new-tab --ozone-platform
 
 -- SUPER+SHIFT+Y was: YouTube
 hl.unbind("SUPER + SHIFT + Y")
-o.bind("SUPER + SHIFT + Y", "Local WebUI", { launch = "brave --new-tab --ozone-platform=wayland http://localhost:8112/" })
+o.bind(
+	"SUPER + SHIFT + Y",
+	"Local WebUI",
+	{ launch = "brave --new-tab --ozone-platform=wayland http://localhost:8112/" }
+)
 
 -- SUPER+W was: Close window
 -- impala isn't used in Omarchy 4; network is now the Quickshell panel
 -- (also on SUPER+CTRL+W by default)
 hl.unbind("SUPER + W")
 o.bind("SUPER + W", "Network", "omarchy-shell shell toggle omarchy.network")
+dofile(os.getenv("HOME") .. "/.config/omarchy/plugins/io.github.pablo-merino.altswitch/altswitch.lua")
+
+-- strata-installer: file-manager start
+hl.unbind("SUPER + SHIFT + F")
+hl.unbind("SUPER + ALT + SHIFT + F")
+o.bind("SUPER + SHIFT + F", "File manager", { launch = "/home/martin/.local/bin/strata" })
+o.bind("SUPER + ALT + SHIFT + F", "File manager (cwd)",
+  "uwsm-app -- /home/martin/.local/bin/strata \"$(omarchy-cmd-terminal-cwd)\"")
+-- strata-installer: file-manager end

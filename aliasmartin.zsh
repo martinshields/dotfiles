@@ -10,6 +10,7 @@ alias ls="eza"
 alias v='vifm .'
 alias mv="mv-iv"
 alias mkdir="mkdir -vp"
+alias picon="ssh -p 2233 'martin@192.168.8.238'"
 
 # Enhanced WHOIS lookups
 alias dspace='ncdu'
