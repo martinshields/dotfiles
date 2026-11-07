@@ -36,7 +36,8 @@
 -- Also dropped the old duplicate/broken "SUPER SHIFT+F -> $fileManager" bind
 -- ($fileManager was never defined in bindings.conf).
 
--- o.bind("SUPER + SHIFT + Q", "Close window", hl.dsp.window.close())
+hl.unbind("SUPER + SHIFT + Q")
+o.bind("SUPER + SHIFT + Q", "Close window", hl.dsp.window.close())
 
 o.bind("SUPER + B", "Browser", { launch = "brave --new-tab --ozone-platform=wayland" })
 o.bind("SUPER + N", "Neovim", { tui = "nvim" })
