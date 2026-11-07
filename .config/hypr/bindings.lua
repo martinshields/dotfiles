@@ -36,7 +36,7 @@
 -- Also dropped the old duplicate/broken "SUPER SHIFT+F -> $fileManager" bind
 -- ($fileManager was never defined in bindings.conf).
 
-o.bind("SUPER + SHIFT + Q", "Close window", hl.dsp.window.close())
+-- o.bind("SUPER + SHIFT + Q", "Close window", hl.dsp.window.close())
 
 o.bind("SUPER + B", "Browser", { launch = "brave --new-tab --ozone-platform=wayland" })
 o.bind("SUPER + N", "Neovim", { tui = "nvim" })
@@ -65,6 +65,8 @@ o.bind(
 	"Local WebUI",
 	{ launch = "brave --new-tab --ozone-platform=wayland http://localhost:8112/" }
 )
+-- settings
+o.bind("SUPER +SHIFT + I", "Settings", "omarchy-shell shell toggle omatings '{}'")
 
 -- SUPER+W was: Close window
 -- impala isn't used in Omarchy 4; network is now the Quickshell panel
@@ -77,6 +79,22 @@ dofile(os.getenv("HOME") .. "/.config/omarchy/plugins/io.github.pablo-merino.alt
 hl.unbind("SUPER + SHIFT + F")
 hl.unbind("SUPER + ALT + SHIFT + F")
 o.bind("SUPER + SHIFT + F", "File manager", { launch = "/home/martin/.local/bin/strata" })
-o.bind("SUPER + ALT + SHIFT + F", "File manager (cwd)",
-  "uwsm-app -- /home/martin/.local/bin/strata \"$(omarchy-cmd-terminal-cwd)\"")
+o.bind(
+	"SUPER + ALT + SHIFT + F",
+	"File manager (cwd)",
+	'uwsm-app -- /home/martin/.local/bin/strata "$(omarchy-cmd-terminal-cwd)"'
+)
 -- strata-installer: file-manager end
+
+-- Dictation keys from before Alt + Space and Right Alt became the defaults.
+-- Remove these lines to give the keys back to applications.
+if o.dictation_installed and o.dictation_installed() then
+	o.bind("SUPER + CTRL + X", "Toggle dictation", "omarchy-dictation toggle")
+	o.bind_hold(
+		"F9",
+		"Start dictation (push-to-talk)",
+		"omarchy-dictation start",
+		"Stop dictation (push-to-talk)",
+		"omarchy-dictation stop"
+	)
+end

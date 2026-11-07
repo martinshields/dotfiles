@@ -65,7 +65,13 @@ set norunexec
 
 " List of color schemes to try (picks the first one supported by the terminal)
 
-colorscheme palenight
+colorscheme omarchy palenight
+
+" Started via ~/.local/bin/vifm with TERM=xterm-direct for 24-bit colors;
+" give programs launched from vifm the terminal's real TERM back
+if $VIFM_ORIG_TERM != ''
+    let $TERM = $VIFM_ORIG_TERM
+endif
 
 " Format for displaying time in file list. For example:
 " TIME_STAMP_FORMAT=%m/%d-%H:%M
